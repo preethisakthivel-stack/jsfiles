@@ -80,6 +80,10 @@
             <option>Ai</option>
             
         </select>
+        <lable>Gender:-</lable>
+        <input type="radio" name="gen" value="gender" class="changend"/>Male
+        <input type="radio" name="gen" value="gender" class="changend"/>Female
+        <input type="radio" name="gen" value="gender" class="changend"/>others
     </form>
     </div>
     <p id="pop"></p>
@@ -108,7 +112,10 @@
             backblur.style.webkitFilter='' 
              backblur.style.opacity=''     
         })
-
+        const genders=document.getElementsByClassName('gender')
+        Array.from(genders).forEach('input',(gens)=>{
+            console.log('Gender:-',gens.value)
+        })
     </script>
 </body>
 </html>
