@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+     #inns{
+        background-color: blue;
+        color: white;
+        width: 75px;
+        text-align: center;
+      }
+   </style>
+</head>
+
+<body>
+    <h4 onmouseenter="showalert()" onmouseleave="hidealert()">DOM</h4>
+    <p id="para"> </p>
+    <h5 id="dds">DOM Abb</h5>
+    <p id="para1"></p>
+
+    <h3 id="inns">Join us</h3>
+    
+
+    
+    
+    
+
+    <script>
+        const para=document.getElementById('para')
+        let showalert = () => {
+            // alert("The DOM is the combine of Html,css and js")
+            para.textContent="The define of DOM is the combine of Html,css and js"
+        }
+        let hidealert=()=>{
+            para.textContent=""
+        }
+        const dds1=document.getElementById('dds')
+        const paras=document.getElementById('para1')
+        dds1.addEventListener('mouseenter',()=>{
+            paras.textContent="DOM is Document Model Object"
+            paras.style.color='red'
+           
+        })
+        dds1.addEventListener('mouseleave',()=>{
+            paras.textContent=""
+        })
+
+        const inns1=document.getElementById('inns')
+        
+        
+        
+        
+        
+    </script>
+
+</body>
+
+</html>

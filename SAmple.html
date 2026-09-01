@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="heads">Documentory</h1>
+    <ol>
+        <li class="list"></li>
+        <li class="list"></li>
+        <li class="list"></li>
+
+        <p id='para'>Some document must be printed.</p>
+        <ul>
+            <li class="reff"></li>
+            <li class="reff"></li>
+            <li class="reff"></li>
+        </ul>
+
+    </ol>
+    <script>
+        //....id
+        let head = document.getElementById('heads')
+        console.log('Heads content', head.textcontent)
+
+
+        //...class
+        let lists = document.getElementsByClassName('list')
+        console.log('lists', lists)
+        console.log(Array.from(lists))
+        Array.from(lists).forEach(lis => {
+            lis.textContent = head.textContent
+        })
+
+        //queryselector
+        let parra = document.querySelector('#para')
+        console.log(parra.textContent)
+
+        //queryselectorall
+        let reffer = document.querySelectorAll('.reff')
+        console.log(Array.from(reffer))
+        Array.from(reffer).forEach(reff => {
+            reff.textContent = parra.textContent
+        })
+
+    </script>
+</body>
+
+</html>

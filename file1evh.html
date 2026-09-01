@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #creat{
+            border: solid;
+            height: 28px;
+            width: 110px;
+            color: white;
+            background-color: blue;
+            text-align: center;
+            
+        }
+        #pop{
+            border:solid;
+            border-color: rgb(100, 96, 96);
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 90%;
+            max-width: 450px;
+            height: 30%;
+            background-color:rgb(199, 232, 249);
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 20px 0;
+            z-index: 1000;
+        }
+        #pop:hover{
+            transition: all 2s ease-in-out;
+            background-color:azure;
+            cursor: pointer; 
+        }
+        
+        
+        #markin{
+            position: absolute;
+            z-index: 1000;
+            left: 63%;
+            top: 37%;
+            display: none;
+            
+        }
+        #select{
+            margin-left: 40px;
+        }
+        #elem{
+            font-weight: 600;
+        }
+        @media  (max-width:971.20px){
+            #markin{
+                left: 75%;
+            }
+            
+        }
+       
+        
+            
+           
+        
+    </style>
+</head>
+<body >
+    <div id="blur">
+    <h2 id="creat">Join us</h2>
+    <dl id="elem">
+        <dd>The Document is created to join us</dd>
+    </dl>
+    <form id="select">
+        <label>Course:</label>
+        <select>
+            <option>Fullstack</option>
+            <option>Data analitics</option>
+            <option>Ai</option>
+            
+        </select>
+    </form>
+    </div>
+    <p id="pop"></p>
+    <img src="cross.png" id="markin"/>
+    
+    <script>
+        const creats=document.getElementById('creat')
+        const popup=document.getElementById('pop')
+        const xmark=document.getElementById('markin')
+        const backblur=document.getElementById('blur')
+        const elemn=document.getElementById('elem')
+        const selec=document.getElementById('select')
+
+           
+        creats.addEventListener('click',()=>{
+            popup.style.display='block'
+            popup.textContent="Name :"
+            xmark.style.display='block'
+            backblur.style.webkitFilter='blur(1px)'
+             backblur.style.opacity='0.5'        
+        })
+        xmark.addEventListener('click',()=>{
+             popup.style.display='none'
+            popup.textContent=""
+            xmark.style.display=''
+            backblur.style.webkitFilter='' 
+             backblur.style.opacity=''     
+        })
+
+    </script>
+</body>
+</html>
