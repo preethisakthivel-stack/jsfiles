@@ -49,6 +49,7 @@
         }
         #select{
             margin-left: 40px;
+            
         }
         #elem{
             font-weight: 600;
@@ -59,11 +60,6 @@
             }
             
         }
-       
-        
-            
-           
-        
     </style>
 </head>
 <body >
@@ -80,10 +76,15 @@
             <option>Ai</option>
             
         </select>
+        <br><br>
         <lable>Gender:-</lable>
-        <input type="radio" name="gen" value="gender" class="changend"/>Male
-        <input type="radio" name="gen" value="gender" class="changend"/>Female
-        <input type="radio" name="gen" value="gender" class="changend"/>others
+        <input type="radio" name="gen" value="Male" class="changend"/>Male
+        <input type="radio" name="gen" value="Female" class="changend"/>Female
+        <input type="radio" name="gen" value="others" class="changend"/>others
+        <br><br>
+        <lable>Phone Number:-</lable>
+        <input type="number" id="num"/>
+
     </form>
     </div>
     <p id="pop"></p>
@@ -103,7 +104,8 @@
             popup.textContent="Name :"
             xmark.style.display='block'
             backblur.style.webkitFilter='blur(1px)'
-             backblur.style.opacity='0.5'        
+             backblur.style.opacity='0.5' 
+                 
         })
         xmark.addEventListener('click',()=>{
              popup.style.display='none'
@@ -112,10 +114,20 @@
             backblur.style.webkitFilter='' 
              backblur.style.opacity=''     
         })
-        const genders=document.getElementsByClassName('gender')
-        Array.from(genders).forEach('input',(gens)=>{
-            console.log('Gender:-',gens.value)
+        const genders=document.getElementsByClassName('changend')
+        
+        Array.from(genders).forEach((gens)=>{
+            gens.addEventListener('input',()=>{
+                console.log('Gender:-',gens.value)
+            })
         })
+        const number=document.getElementById('num')
+        let numbervalue=null
+        number.addEventListener('input',()=>{
+            numbervalue=number.value
+            console.log('Phone Number:-',numbervalue)
+        })
+        
     </script>
 </body>
 </html>

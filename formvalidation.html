@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="formvalid.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+
+<body>
+   
+    <div id="fixit">
+    <div >
+        <img src="alessandro89-background-1497873_640.jpg" id="backgrdfix" />
+        <p id="texts">Welcome</p>
+    </div>
+    <div id="create">
+    <form id="setat">
+        <div>
+            <div>
+                <lable for="name ">Name:-</lable>
+                <input type="text" id="username" placeholder="Enter your Name" />
+            </div>
+            <span id="errormsg" style="color: red; font-size: medium;"></span><br>
+        </div>
+
+        <div>
+            <div>
+                <label for="email">Emailid:-</label>
+                <input type="email" id="useremail" placeholder="Enter your Email" />
+            </div>
+            <span id="emailerror" style="color: red; font-size: medium;"></span><br>
+
+        </div>
+        
+            <label>Country code:</label>
+            <select id="selected">
+                <option value=""></option>
+                <option value="+1">+1</option>
+                <option value="+91">+91</option>
+                <option value="+44">+44</option>
+                <option value="+61"> +61</option>
+                <option value="+20">+20</option>
+                <option value="+49"> +49</option>
+                <option value="+81"> +81</option>
+                <option value="+55"> +55</option>
+                <option value="+33"> +33</option>
+                <option value="+1">+1</option>
+
+            </select>
+            
+            <span id="errcc" style="color: red; font-size: medium;"></span>
+        
+        <br><br><div>
+            <div>
+                <lable for="number">Ph.No:-</lable>
+                <p id="code" ></p>
+                <div id="fix"><input type="number" id="usernumber" style="height: 17.2px;" placeholder="Enter your number" /></div>
+            </div>
+            <span id="numerror" style="color: red; font-size: medium;"></span>
+        </div>
+    </form>
+    
+    <button id="getelem" style="background-color: rgb(81, 0, 255); margin-top: 50px;width: 70px; color: white;">save</button>
+    
+    <p id="elemgot" style="font-size: large;"></p>
+    <div id="savedoc"></div>
+    <img src="cross.png" id="crossmark" style="padding-left: 280px;"/>
+    </div>
+    </div>
+    <script>
+       
+        const texts=document.getElementById('texts')
+        const fixit=document.getElementById('fixit')
+        const backgrdfix=document.getElementById('backgrdfix')       
+        const create=document.getElementById('create')
+        const setat = document.getElementById('setat')
+        const usersname = document.getElementById('username')
+        const errmsg = document.getElementById('errormsg')
+        const usersemail = document.getElementById('useremail')
+        const usersnumber = document.getElementById('usernumber')
+        const errmsgemail = document.getElementById('emailerror')
+        const errmsgnum = document.getElementById('numerror')
+        const countrycode = document.getElementById('selected')
+        const getelems=document.getElementById('getelem')
+        const elementare=document.getElementById('elemgot')
+        const crossmark=document.getElementById('crossmark')
+        const savedoc=document.getElementById('savedoc')
+        const errcc=document.getElementById('errcc')
+        namerejex = /^[a-zA-Z\s\.]+$/
+        emailrejex = /^[a-zA-Z0-9]*@gmail\.com$/
+        numberrejex = /^[6-9]\d{9}$/
+
+        let usernamevalue = "";
+        usersname.addEventListener('input', () => {
+            if (namerejex.test(usersname.value)) {
+                usersname.classList.remove('error')
+                usersname.classList.add('success')
+                usernamevalue = usersname.value
+                errmsg.textContent = "";
+
+            } else {
+                usersname.classList.remove('success')
+                usersname.classList.add('error')
+                errmsg.textContent = "Enter a valid name"
+                usernamevalue = ""
+            }
+            console.log('username:', usernamevalue)
+        })
+
+        let useremailvalue = "";
+        usersemail.addEventListener('input', () => {
+            if (emailrejex.test(usersemail.value)) {
+                usersemail.classList.remove('error')
+                usersemail.classList.add('success')
+                useremailvalue = usersemail.value
+                errmsgemail.textContent = "";
+            } else {
+                usersemail.classList.remove('success')
+                usersemail.classList.add('error')
+                errmsgemail.textContent = "Enter a valid Email"
+                useremailvalue = ""
+            }
+            console.log('useremail:', useremailvalue)
+        })
+
+        const codd = document.getElementById('code')
+        countrycode.addEventListener('change', () => {
+            codd.textContent = countrycode.value
+            codd.style.fontSize="17px"
+            console.log('cc:',countrycode.value)
+            errcc.textContent=""
+        })
+
+        let usernumvalue = "";
+        usersnumber.addEventListener('input', () => {
+            if (numberrejex.test(usersnumber.value)) {
+                usersnumber.classList.remove('error')
+                usersnumber.classList.add('success')
+                usernumvalue = usersnumber.value
+                errmsgnum.textContent = "";
+
+            } else {
+                usersnumber.classList.remove('success')
+                usersnumber.classList.add('error')
+                errmsgnum.textContent = "Enter a valid Number"
+                usernumvalue = ""
+            }
+            console.log('usernumber:', usernumvalue)
+        })
+
+        getelems.addEventListener('click',()=>{
+            
+            crossmark.style.display='block'
+             elementare.style.display='block'
+              
+        const getname=document.createElement('p') 
+        getname.textContent=`Name:${usersname.value}`
+        getname.style.padding='0px 0px 0px 10px'
+        elementare.appendChild(getname)
+        const getemail=document.createElement('p') 
+        getemail.textContent=`Email:${usersemail.value}`
+        getemail.style.padding='0px 0px 0px 10px'
+        elementare.appendChild(getemail)
+        const getphonenumber=document.createElement('p') 
+        getphonenumber.textContent=`PH.NO:${countrycode.value} ${usersnumber.value}`
+        getphonenumber.style.padding='0px 0px 0px 10px'
+        elementare.appendChild(getphonenumber)
+        if(usersname.value===""){
+            errmsg.textContent="Enter a name"
+            elementare.style.display='none'
+            crossmark.style.display='none'
+            getname.textContent=""
+        }else{
+            errmsg.textContent="" 
+        }
+        if(usersemail.value===""){
+            errmsgemail.textContent="Enter a Email"
+            elementare.style.display='none'
+            crossmark.style.display='none'
+            getemail.textContent=""
+        }else{
+            errmsgemail.textContent="" 
+        }
+        if(usersnumber.value===""){
+            errmsgnum.textContent="Enter a number"
+            elementare.style.display='none'
+            crossmark.style.display='none'
+            getphonenumber.textContent=""
+        }else{
+            errmsgnum.textContent="" 
+        }
+        if(codd.textContent===""){
+            errcc.textContent="Select a code"
+            elementare.style.display='none'
+            crossmark.style.display='none'
+             getphonenumber.textContent=""
+            
+        }else{
+            errcc.textContent=""
+        }
+        })
+
+        crossmark.addEventListener('click',()=>{
+            crossmark.style.display='none'
+             elementare.style.display='none'
+             elementare.innerHTML="";
+             
+            
+        })
+
+
+
+
+    </script>
+</body>
+
+</html>

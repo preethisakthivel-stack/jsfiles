@@ -1,0 +1,147 @@
+
+        #errormsg {
+
+            font-size: large;
+        }
+        
+
+        #emailerror {
+            font-size: large;
+        }
+
+        #numerror {
+            font-size: large;
+        }
+
+        #setat {
+            padding-top: 49px;
+            padding-left: 10px;
+            font-weight: 500;
+            font-size: large;
+            border-radius: 2px;
+            width: 300px;
+        }
+
+        .success {
+            border: none;
+            border-bottom: 2px solid green;
+        }
+
+        .error {
+            border: none;
+            border-bottom: 2px solid red;
+        }
+       
+        #code {
+         
+             display: inline;
+            border: 1.5px solid;
+            padding: 0px 20px 0px 8px;
+            background-color: white;
+            font-size: large;
+            
+        }
+        #fix{
+            display: inline-block;
+            margin-left: 10px;
+        }
+        #elemgot{
+            display: none;
+            border: 1px solid black;
+            width: 300px;
+            height: auto;
+            background-color: azure;
+            border-radius: 6px;
+            box-shadow: 0px 1px 8px ;    
+        }
+
+        #crossmark{
+            display: none;
+            margin-top: -150px;
+            position: fixed;
+        }
+
+        #create{
+            border: 0px solid;
+            height: 330px;
+            margin: 150px 0px 235px 0px; 
+            padding-left: 10px; 
+            border-radius: 0px 10px 10px 0px;
+            background-color: azure;
+            box-shadow:0px 2px 15px 0;
+            cursor: pointer; 
+            color: purple;
+            
+        }
+
+        #getelem{
+            margin-bottom:10px;
+        }
+        @media (max-width:990.50px) {
+         #create{
+            width: 400px;
+            border-radius: 10px ;
+            margin-left: -330px;
+            
+         }
+         
+        }
+        @media (max-width:720px) {
+        #create{
+            width: 320px;
+            margin-left: -490px;
+           
+        }
+        }
+        @media (max-width:500px) {
+            #setat{
+                padding-left: 10px;
+            }
+            #create{
+                width: 280px;
+                margin-left: -590px;
+            }
+        }
+        
+       body{
+        background:linear-gradient(to bottom left,rgb(238, 94, 94),rgb(95, 95, 235),rgb(225, 79, 225),rgb(249, 91, 91)) no-repeat;
+        
+       }
+        
+       input{
+        border:none;
+        border-bottom:2px solid mediumvioletred;
+       }
+       input:focus{
+        outline:none ;
+       }
+        #fixit{
+            display: flex;
+            gap: 0%;
+            margin-left: 370px;
+            z-index: 1;
+            position: sticky;
+
+        }
+        #backgrdfix{
+           height: 330px;
+           max-width: 400px; 
+           margin-top: 150px;
+           border-radius: 10px 0px 0px 10px;
+           box-shadow:0px 2px 15px 0;
+        }
+        #texts{
+            margin-top: -200px;
+            color: white;
+            margin-left: 140px;
+            font-size:xx-large;   
+        }
+        
+            
+        @media (max-width:990.50px) {
+         #backgrdfix{
+               display: none;
+            }   
+        }
+        
+        
